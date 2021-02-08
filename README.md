@@ -30,3 +30,5 @@ Node.Js Backend:
  MongoDB (Dokumentenbasiert)
  
  
+Python KI
+ 
