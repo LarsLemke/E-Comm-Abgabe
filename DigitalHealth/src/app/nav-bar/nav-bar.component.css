@@ -1,0 +1,12 @@
+.navbar{
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 70px;
+}
+
+.loginWrong{
+  color: red;
+}
+.formDiv{
+  display: block;
+}

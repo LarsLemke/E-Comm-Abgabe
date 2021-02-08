@@ -1,0 +1,58 @@
+<div class="dialog">
+  <form [formGroup]="checkoutForm">
+    <div class="example-full-width">
+      <mat-label>Wie fanden Sie diese Übung?</mat-label>
+      <span class="text-small">Schlecht</span
+      ><mat-slider
+        thumbLabel
+        tickInterval="1"
+        formControlName="s1"
+        min="0"
+        max="10"
+        class="slider-width"
+      ></mat-slider
+      ><span class="text-small">Gut</span>
+    </div>
+
+    <div class="example-full-width">
+      <mat-label>Wie geht es Ihnen?</mat-label>
+      <span class="text-small">Schlecht</span
+      ><mat-slider
+        thumbLabel
+        tickInterval="1"
+        formControlName="s2"
+        min="0"
+        max="10"
+        class="slider-width"
+      ></mat-slider
+      ><span class="text-small">Gut</span>
+    </div>
+  </form>
+  <button
+    mat-raised-button
+    mat-dialog-close
+    tabindex="-1"
+    matDialogClose
+    (click)="onClose()"
+  >
+    Abbrechen
+  </button>
+  <button
+    mat-raised-button
+    mat-dialog-close
+    tabindex="-1"
+    matDialogClose
+    (click)="onSave()"
+  >
+    Speichern
+  </button>
+  <button
+    mat-raised-button
+    color="info"
+    (click)="onConfirmClick()"
+    matDialogClose
+    tabindex="1"
+  >
+    Speichern und nächste Übung
+  </button>
+</div>

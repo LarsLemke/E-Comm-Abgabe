@@ -1,0 +1,6 @@
+.no-mouse-action {
+  pointer-events: none;
+}
+.content {
+  background-color: white;
+}

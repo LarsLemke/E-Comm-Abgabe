@@ -1,0 +1,87 @@
+<nav
+  class="navbar navbar-expand-sm bg-light navbar-light justify-content-between"
+>
+  <h1
+    class="navbar-brand"
+    href="#"
+    style="cursor: pointer"
+    (click)="navigate()"
+  >
+    <img
+      src="././assets/bilder/logo.png"
+      width="50"
+      height="70"
+      style="margin-top: 10px"
+    />
+    Ditgital Health
+  </h1>
+
+  <div *ngIf="notLogedIn">
+    <form [formGroup]="loginFormGroup" class="form-inline my-2 my-lg-0">
+      <div class="input-group">
+        <span class="input-group-addon"
+          ><i class="glyphicon glyphicon-user"></i
+        ></span>
+        <input
+          id="email"
+          type="email"
+          formControlName="nameCtrl"
+          name="email"
+          placeholder="Email Address"
+        />
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-addon"
+          ><i class="glyphicon glyphicon-lock"></i
+        ></span>
+        <input
+          id="password"
+          type="password"
+          formControlName="passwordCtrl"
+          name="password"
+          value=""
+          placeholder="Password"
+        />
+      </div>
+
+      <button
+        type="button"
+        (click)="onSubmit()"
+        class="btn btn-primary"
+        style="margin-left: 10px"
+      >
+        Login
+      </button>
+      <button
+        style="margin-left: 5px"
+        type="button"
+        class="btn btn-info"
+        (click)="onRegister()"
+      >
+        Register
+      </button>
+    </form>
+    <div class="loginWrong" *ngIf="loginWrong">
+      Password oder E-Mail ungültig
+    </div>
+  </div>
+  <div *ngIf="!notLogedIn">
+    <button
+      style="margin-left: 5px"
+      type="button"
+      class="btn btn-info"
+      (click)="onLogout()"
+    >
+      Logout
+    </button>
+    <button
+      style="margin-left: 5px"
+      type="button"
+      class="btn btn-info"
+      (click)="profile()"
+    >
+      Profil Seite
+    </button>
+  </div>
+</nav>

@@ -1,0 +1,394 @@
+<div class="content">
+  <mat-horizontal-stepper
+    [linear]="isLinear"
+    #stepper
+    style="border-radius: 25px"
+  >
+    <!-- #docregion label -->
+    <mat-step [stepControl]="berufFormGroup" label="Alltag">
+      <!-- #enddocregion label -->
+      <form [formGroup]="berufFormGroup" style="margin-top: 20px">
+        <div class="example-full-width">
+          <mat-label>Arbeiten Sie viel am Commputer?</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            formControlName="silderComputerCtrl"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider
+          ><span class="text-small">viel</span>
+        </div>
+
+        <div class="example-full-width">
+          <mat-label>Bewgen Sie sich viel?</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            formControlName="silderBewegungCtrl"
+            tickInterval="1"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+          <span class="text-small">viel</span>
+        </div>
+        <div class="example-full-width">
+          <mat-label>Sind Sie lange im Auto?</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            formControlName="silderAutoCtrl"
+            tickInterval="1"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+          <span class="text-small">viel</span>
+        </div>
+        <div class="example-full-width">
+          <mat-label>Heben Sie schwer?</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            formControlName="silderHebenCtrl"
+            tickInterval="1"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+          <span class="text-small">viel</span>
+        </div>
+        <div class="example-full-width">
+          <mat-label>Sitzten Sie viel?</mat-label>
+          <span class="text-small">wenig</span>
+          <mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            formControlName="silderSitzenCtrl"
+            tickInterval="1"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+          <span class="text-small">viel</span>
+        </div>
+
+        <div>
+          <button mat-button matStepperPrevious>Zurück</button>
+          <button mat-button matStepperNext>Weiter</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="gesundheitFormGroup" label="Gesundheit">
+      <!-- #enddocregion label -->
+      <form [formGroup]="gesundheitFormGroup">
+        <div class="example-full-width">
+          <mat-label>Wie stark sind Ihre Rückenschmerzen</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            formControlName="schmerzenRückenCtrl"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider
+          ><span class="text-small">viel</span>
+        </div>
+        <div class="example-full-width">
+          <mat-label>Wie stark sind Ihre Nackenschmerzen?</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            formControlName="schmerzenNackenCtrl"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider
+          ><span class="text-small">viel</span>
+        </div>
+        <div class="example-full-width">
+          <mat-label>Wie stark sind Ihre Handgelenkschmerzen?</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            formControlName="schmerzenHandgelenkCtrl"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider
+          ><span class="text-small">viel</span>
+        </div>
+        <div class="example-full-width">
+          <mat-label>Wie stark sind Ihre Knieschmerzen?</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            formControlName="schmerzenKnieCtrl"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider
+          ><span class="text-small">viel</span>
+        </div>
+        <div class="example-full-width">
+          <mat-label>Wie stark sind Ihre Hüftschmerzen?</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            formControlName="schmerzenHüfteCtrl"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider
+          ><span class="text-small">viel</span>
+        </div>
+        <div class="example-full-width">
+          <mat-label>Wie stark sind Ihre Schulterschmerzen?</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            formControlName="schmerzenSchulterCtrl"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider
+          ><span class="text-small">viel</span>
+        </div>
+        <div class="example-full-width">
+          <mat-label>Wie stark sind Ihre Fußgelenkeschmerzen?</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            formControlName="schmerzenFußgelenkeCtrl"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider
+          ><span class="text-small">viel</span>
+        </div>
+
+        <!-- {{ gesundheitFormGroup.get("schmerzenRückenCtrl").value }} -->
+        <mat-label>Ist Ihre Beweglichkeit verändert?</mat-label>
+        <mat-slide-toggle
+          formControlName="toggelBeweglichketCtrl"
+        ></mat-slide-toggle>
+        <mat-label> Ist Ihre Sensibilität verändert?</mat-label>
+        <section class="problem-section">
+          <mat-checkbox
+            formControlName="schmerzenBrennenCtrl"
+            class="problem-margin"
+            >Brennen
+          </mat-checkbox>
+          <mat-checkbox
+            formControlName="schmerzenKribbelnCtrl"
+            class="problem-margin"
+            >Kribbeln
+          </mat-checkbox>
+          <mat-checkbox
+            formControlName="schmerzenTaubheitCtrl"
+            class="problem-margin"
+            >Taubheit</mat-checkbox
+          >
+          <mat-checkbox
+            formControlName="schmerzenÜberempfindlichkeitCtrl"
+            class="problem-margin"
+            >Überempfindlichkeit</mat-checkbox
+          >
+          <mat-checkbox
+            formControlName="schmerzenNadelnCtrl"
+            class="problem-margin"
+            >Nadeln</mat-checkbox
+          >
+        </section>
+
+        <!-- <mat-slide-toggle formControlName="toggelkraftCtrl"></mat-slide-toggle> -->
+        <mat-label
+          >Ist Ihre Kraft verändert (Kraftlosigkeit, Lähmung)?</mat-label
+        >
+        <mat-slide-toggle formControlName="toggelkraftCtrl"></mat-slide-toggle>
+        <!-- <mat-label>Was ist ihre Hauptbeschwerde im Alltag?</mat-label>
+        <mat-radio-group
+          formControlName="schmerzenFeldCtrl"
+          aria-label="Select an option"
+        >
+          <mat-radio-button class="problem-margin" value="1"
+            >Rücken</mat-radio-button
+          >
+          <mat-radio-button class="problem-margin" value="2"
+            >Nacken</mat-radio-button
+          >
+          <mat-radio-button class="problem-margin" value="3"
+            >Handgelenk</mat-radio-button
+          >
+          <mat-radio-button class="problem-margin" value="4"
+            >Knie</mat-radio-button
+          >
+          <mat-radio-button class="problem-margin" value="5"
+            >Hüfte</mat-radio-button
+          >
+          <mat-radio-button class="problem-margin" value="6"
+            >Schulter</mat-radio-button
+          >
+          <mat-radio-button class="problem-margin" value="7"
+            >Fußgelenke</mat-radio-button
+          >
+        </mat-radio-group> -->
+        <mat-label> Gab es einen Auslöserfür Ihre Beschwerden ?</mat-label>
+        <section class="problem-section">
+          <mat-checkbox
+            formControlName="schmerzenArbeitenCtrl"
+            class="problem-margin"
+            >Arbeiten
+          </mat-checkbox>
+          <mat-checkbox
+            formControlName="schmerzenLaufenCtrl"
+            class="problem-margin"
+            >Laufen
+          </mat-checkbox>
+          <mat-checkbox
+            formControlName="schmerzenBückenCtrl"
+            class="problem-margin"
+            >Bücken
+          </mat-checkbox>
+          <mat-checkbox
+            formControlName="schmerzenStressCtrl"
+            class="problem-margin"
+            >Stress</mat-checkbox
+          >
+          <mat-checkbox
+            formControlName="schmerzenWetterCtrl"
+            class="problem-margin"
+            >Gutes Wetter</mat-checkbox
+          >
+          <mat-checkbox
+            formControlName="schmerzenSpringenCtrl"
+            class="problem-margin"
+            >Springen</mat-checkbox
+          >
+        </section>
+
+        <!-- <div
+          class="example-full-width"
+          style="padding-left: 5px; padding-right: 5px"
+        > -->
+        <!-- <mat-label> Wie stark sind Ihre Schmerzen aktuell?</mat-label>
+          <span class="text-small">wenig</span
+          ><mat-slider
+            thumbLabel
+            formControlName="aktuelleschmerzenCtrl"
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+          <span class="text-small">stark</span>
+        </div> -->
+
+        <div>
+          <button mat-button matStepperPrevious>Zurück</button>
+          <button mat-button matStepperNext (click)="getPlaylist()">
+            Weiter
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="accountFormGroup">
+      <form [formGroup]="accountFormGroup">
+        <ng-template matStepLabel>Account</ng-template>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Vorname</mat-label>
+          <input matInput formControlName="nameCtrl" placeholder="First Name" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Nachname</mat-label>
+          <input
+            matInput
+            formControlName="lastNameCtrl"
+            placeholder="Last Name"
+          />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>E-Mail Addresse (Login)</mat-label>
+          <input
+            matInput
+            type="email"
+            formControlName="eMailCtrl"
+            placeholder="example@example.de"
+          />
+        </mat-form-field>
+        <p *ngIf="mailexists" style="color: red">
+          Diese Email existiert bereits
+        </p>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            formControlName="passwordCtrl"
+            required
+            minlength="8"
+            Type="password"
+            placeholder="Passwort mit mehr als 8 Zeichen wählen"
+          />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password Bestätigung</mat-label>
+          <input
+            matInput
+            formControlName="passwordBestätigungCtrl"
+            required
+            minlength="8"
+            Type="password"
+            placeholder="Bitte das Passwort bestätigen"
+          />
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperPrevious>Zurück</button>
+          <button
+            mat-button
+            (click)="goForward(stepper)"
+            *ngIf="accountFormGroup.valid"
+          >
+            Weiter
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="paymentFormGroup" label="Zahlungsweise">
+      <!-- #enddocregion label -->
+      <form [formGroup]="paymentFormGroup">
+        <app-pricing (saveRegister)="saveRegister()"></app-pricing>
+        <div>
+          <button mat-button matStepperPrevious>Zurück</button>
+          <!-- <button mat-button (click)="speichern()">Speicher</button> -->
+          <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+        </div>
+      </form>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

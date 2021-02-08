@@ -1,0 +1,5 @@
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+.content {
+  padding-left: 5%;
+  padding-right: 5%;
+}

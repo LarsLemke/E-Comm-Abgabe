@@ -1,0 +1,7 @@
+mat-input,
+mat-label {
+  display: block;
+}
+.example-full-width {
+  width: 100%;
+}

@@ -1,0 +1,111 @@
+<div class="content" *ngIf="!admin">
+  <div class="row"></div>
+  <h1 style="margin-top: 50px">Hallo {{ name }}</h1>
+  <h2>Unserer Empfehlung heute</h2>
+  <div class="row">
+    <div class="video col-sm-8">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe
+          *ngIf="videoUrl"
+          width="560"
+          height="315"
+          [src]="videoUrl"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="details col-sm-4">
+      <form [formGroup]="catFormGroup" *ngIf="videoUrl">
+        <div class="kategorie">
+          <mat-label>Rücken</mat-label>
+          <mat-slider
+            style="pointer-events: none"
+            thumbLabel
+            formControlName="rueckenCtrl"
+            tickInterval="1"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+
+          <mat-label>Nacken</mat-label>
+          <mat-slider
+            thumbLabel
+            style="pointer-events: none"
+            tickInterval="1"
+            min="0"
+            formControlName="nackenCtrl"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+
+          <mat-label>Handgelenk</mat-label>
+          <mat-slider
+            thumbLabel
+            style="pointer-events: none"
+            tickInterval="1"
+            min="0"
+            formControlName="handgelenkeCtrl"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+
+          <mat-label>Knie</mat-label>
+          <mat-slider
+            thumbLabel
+            style="pointer-events: none"
+            tickInterval="1"
+            min="0"
+            formControlName="knieCtrl"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+
+          <mat-label>Hüfte</mat-label>
+          <mat-slider
+            thumbLabel
+            style="pointer-events: none"
+            tickInterval="1"
+            min="0"
+            formControlName="huefteCtrl"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+
+          <mat-label>Schulter</mat-label>
+          <mat-slider
+            thumbLabel
+            formControlName="schulterCtrl"
+            style="pointer-events: none"
+            tickInterval="1"
+            min="0"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+
+          <mat-label>Fußgelenke</mat-label>
+          <mat-slider
+            thumbLabel
+            style="pointer-events: none"
+            tickInterval="1"
+            min="0"
+            formControlName="fussgelenkeCtrl"
+            max="10"
+            class="slider-width"
+          ></mat-slider>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- <div class="row" style="overflow: scroll">
+    <app-next-videos
+      [videos]="videos"
+      (newMainVideo)="setMainVideoURL($event)"
+    ></app-next-videos>
+  </div> -->
+</div>
+
+<app-admin *ngIf="admin"></app-admin>

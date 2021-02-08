@@ -1,0 +1,9 @@
+{
+  "/api/": {
+      "target": "http://35.210.164.10:3000",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin":false,
+      "pathRewrite": { "^/api": "" }
+  }
+}

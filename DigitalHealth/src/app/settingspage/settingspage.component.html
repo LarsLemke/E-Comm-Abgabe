@@ -1,0 +1,60 @@
+<div class="content" style="margin-top: 100px; margin-bottom: 50px">
+  <h1>Settings</h1>
+  <h2>Persönliche Angaben ändern</h2>
+  <form [formGroup]="accountFormGroup">
+    <ng-template matStepLabel>Account</ng-template>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Vorname</mat-label>
+      <input matInput formControlName="nameCtrl" placeholder="First Name" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nachname</mat-label>
+      <input matInput formControlName="lastNameCtrl" placeholder="Last Name" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>E-Mail Addresse (Login)</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="eMailCtrl"
+        placeholder="example@example.de"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        formControlName="passwordCtrl"
+        required
+        minlength="8"
+        Type="password"
+        placeholder="Passwort mit mehr als 8 Zeichen wählen"
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Password Bestätigung</mat-label>
+      <input
+        matInput
+        formControlName="passwordBestätigungCtrl"
+        required
+        minlength="8"
+        Type="password"
+        placeholder="Bitte das Passwort bestätigen"
+      />
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button>Änderungen Speichern</button>
+    </div>
+  </form>
+  <h2 style="margin-top: 20px">Abonnement ändern</h2>
+  <app-pricing></app-pricing>
+  <h2>Abonnement kündigen</h2>
+  Hier mit kündigen Sie Ihr Abonnement bei Physiomo
+  <button style="margin-left: 5px" type="button" class="btn btn-info">
+    Ja, ich möchte kündigen!
+  </button>
+</div>

@@ -1,0 +1,361 @@
+<app-admin *ngIf="admin"></app-admin>
+<div class="w3-content w3-margin-top" *ngIf="!admin" id="top">
+  <!-- The Grid -->
+  <div class="w3-row-padding padding-top-32">
+    <!-- Left Column -->
+
+    <!-- Subscribe Modal -->
+    <div id="subscribe" class="w3-modal">
+      <div class="w3-modal-content w3-animate-zoom w3-padding-large">
+        <div class="w3-container w3-white">
+          <i
+            onclick="document.getElementById('subscribe').style.display = 'none'"
+            class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent"
+          ></i>
+          <h2 class="w3-wide">Befragung</h2>
+          <p>Sagen sind uns wie hoch sind Ihre einzelne Schmerzen:</p>
+
+          <div class="slidecontainer">
+            <p class="w3-left">
+              Wie hoch arbeiten Sie am Computer?: <span id="demo1"></span>
+            </p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange1"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>Wie hoch bewegen Sie sich?: <span id="demo2"></span></p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange2"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>Sind Sie lange im Auto?: <span id="demo3"></span></p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange3"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>Wie schwer heben Sie?: <span id="demo4"></span></p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange4"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>Wieviel Sitzen Sie?: <span id="demo5"></span></p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange5"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>
+              Wie stark sind Ihre Rückenschmerzen?:
+              <span id="demo6"></span>
+            </p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange6"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>
+              Wie stark sind Ihre Nackenschmerzen?:
+              <span id="demo7"></span>
+            </p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange7"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>
+              Wie stark sind Ihre Handgelenkschmerzen?:
+              <span id="demo8"></span>
+            </p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange8"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>Wie stark sind Ihre Knieschmerzen?: <span id="demo9"></span></p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange9"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>
+              Wie stark sind Ihre Huftschmerzen?:
+              <span id="demo10"></span>
+            </p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange10"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>
+              Wie stark sind Ihre Schlusterschmerzen?:
+              <span id="demo11"></span>
+            </p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange11"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>
+              Wie stark sind Ihre Fußgelenkschmerzen?:
+              <span id="demo12"></span>
+            </p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange12"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>
+              Wie stark sind Ihre Huftschmerzen?:
+              <span id="demo13"></span>
+            </p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange13"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>
+              Wie stark sind Ihre Huftschmerzen?:
+              <span id="demo14"></span>
+            </p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange14"
+            />
+          </div>
+
+          <div class="slidecontainer">
+            <p>
+              Wie stark sind Ihre Huftschmerzen?:
+              <span id="demo15"></span>
+            </p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange15"
+            />
+          </div>
+
+          <br />
+          <button
+            type="button"
+            class="w3-button w3-padding-large w3-teal w3-margin-bottom"
+            onclick="document.getElementById('subscribe').style.display = 'none'"
+          >
+            senden
+          </button>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div>
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h1 class="w3-text-black w3-padding-16" style="margin-top: 50px">
+          <b>Einen wunderschönen Tag {{ account.name }} </b>
+        </h1>
+        <h2>Schön das Sie wieder da sind! Bleiben Sie weiter so motiviert.</h2>
+        <!-- Slideshow Header -->
+        <div class="w3-container" id="apartment">
+          <h2 class="w3-text-teal">Ihre Empfehlungen für heute:</h2>
+          <div class="w3-row">
+            <div
+              class="w3-display-container mySlides2 w3-col s12"
+              id="player"
+              style="height: 500px"
+            ></div>
+          </div>
+
+          <div class="w3-row-padding w3-section">
+            <h2 class="w3-text-teal">Weitere Empfehlungen:</h2>
+            <div class="w3-col s6">
+              <div class="w3-display-container mySlides2">
+                <img
+                  src="{{ img1 }}"
+                  alt="Mountains"
+                  style="width: 100%; min-height: 20rem"
+                  (click)="updateNext(1)"
+                />
+              </div>
+            </div>
+            <div class="w3-col s6">
+              <div class="w3-display-container mySlides2">
+                <img
+                  src="{{ img2 }}"
+                  alt="Mountains"
+                  style="width: 100%; min-height: 20rem"
+                  (click)="updateNext(2)"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-container w3-card w3-white">
+            <h2 class="w3-text-grey w3-padding-16">
+              <i
+                class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"
+              ></i>
+              Playlist Abgeschlossen
+            </h2>
+
+            <p></p>
+            <!-- Progress bars / Skills -->
+            <div *ngIf="playlist == 1">
+              <p>Oberkörper</p>
+              <div class="w3-grey">
+                <mat-progress-bar
+                  mode="determinate"
+                  value="{{ ober }}"
+                ></mat-progress-bar>
+              </div>
+            </div>
+            <div *ngIf="playlist == 2">
+              <p>Rücken</p>
+              <div class="w3-grey">
+                <mat-progress-bar
+                  mode="determinate"
+                  value="{{ ober }}"
+                ></mat-progress-bar>
+              </div>
+            </div>
+            <div *ngIf="playlist == 3">
+              <p>Beine</p>
+              <div class="w3-grey">
+                <mat-progress-bar
+                  mode="determinate"
+                  value="{{ ober }}"
+                ></mat-progress-bar>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div class="w3-container w3-card w3-white">
+            <h2 class="w3-text-grey w3-padding-16">
+              <i
+                class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"
+              ></i
+              >Wir schlagen Ihnen folgenden Trainigsplan vor
+            </h2>
+            <app-calender></app-calender>
+            <div></div>
+            <div class="w3-container w3-card w3-white">
+              <h2 class="w3-text-grey w3-padding-16">
+                <i
+                  class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"
+                ></i
+                >Halten sie uns auf dem Laufenden
+              </h2>
+              <div>
+                <p>
+                  <button
+                    class="w3-button w3-teal"
+                    onclick="document.getElementById('subscribe').style.display = 'block'"
+                  >
+                    Aktuelles Empfinden anpassen
+                  </button>
+                </p>
+              </div>
+            </div>
+
+            <!-- End Right Column -->
+          </div>
+
+          <!-- End Grid -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

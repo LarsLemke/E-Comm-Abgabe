@@ -1,0 +1,182 @@
+<div class="content" style="margin-bottom: 50px; margin-top: 200px">
+  <h1>KI Seite Absprung</h1>
+  <div class="row">
+    <button mat-raised-button class="sendmail" (click)="gotoki()">
+      GO TO KI PAGE
+    </button>
+  </div>
+  <h1>Mail Senden</h1>
+  <div class="row">
+    <button mat-raised-button class="sendmail" (click)="sendall()">
+      Mail an alle senden
+    </button>
+    <label for="material-icons"> Sendestatus</label>
+    <span
+      style="margin-left: 40px"
+      ngClass
+      class="material-icons"
+      [ngClass]="[sendstatus ? 'my-color' : 'red-color']"
+    >
+      email
+    </span>
+  </div>
+  <h1>Videos hinzufügen</h1>
+  <div class="input content" style="margin-top: 50px; background-color: white">
+    <form [formGroup]="addFormGroup" class="form-inline my-2 my-lg-0">
+      <mat-form-field class="example-full-width">
+        <mat-label>URL</mat-label>
+        <input matInput formControlName="urlCtrl" placeholder="Video URL" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Titel</mat-label>
+        <input matInput formControlName="titelCtrl" placeholder="Titel" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Playliste</mat-label>
+        <input
+          matInput
+          formControlName="playlistCtrl"
+          placeholder="playliste"
+        />
+      </mat-form-field>
+      <!-- <mat-form-field class="example-full-width">
+        <mat-label>Beschreibung</mat-label>
+         <input mat-text formControlName="beschreibungCtrl" placeholder="Beschreibung" />
+      </mat-form-field> -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Ruecken</mat-label>
+        <input
+          matInput
+          formControlName="rueckenCtrl"
+          placeholder="Einstufung 1-10"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nacken</mat-label>
+        <input
+          matInput
+          formControlName="nackenCtrl"
+          placeholder="Einstufung 1-10"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Handgelenke</mat-label>
+        <input
+          matInput
+          formControlName="handgelenkeCtrl"
+          placeholder="Einstufung 1-10"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Knie</mat-label>
+        <input
+          matInput
+          formControlName="knieCtrl"
+          placeholder="Einstufung 1-10"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Huefte</mat-label>
+        <input
+          matInput
+          formControlName="huefteCtrl"
+          placeholder="Einstufung 1-10"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Schulter</mat-label>
+        <input
+          matInput
+          formControlName="schulterCtrl"
+          placeholder="Einstufung 1-10"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Fussgelenke</mat-label>
+        <input
+          matInput
+          formControlName="fussgelenkeCtrl"
+          placeholder="Einstufung 1-10"
+        />
+      </mat-form-field>
+
+      <button
+        type="button"
+        (click)="onSubmit()"
+        class="btn btn-primary"
+        style="margin-left: 10px"
+      >
+        Speichern
+      </button>
+    </form>
+  </div>
+  <table
+    style="width: 100%; margin-top: 50px"
+    mat-table
+    *ngIf="dataSource"
+    [dataSource]="dataSource"
+    class="mat-elevation-z8"
+  >
+    <ng-container matColumnDef="url">
+      <th mat-header-cell *matHeaderCellDef>url</th>
+      <td mat-cell *matCellDef="let element">{{ element.url }}</td>
+    </ng-container>
+    <ng-container matColumnDef="titel">
+      <th mat-header-cell *matHeaderCellDef>Titel</th>
+      <td mat-cell *matCellDef="let element">{{ element.titel }}</td>
+    </ng-container>
+    <ng-container matColumnDef="playlist">
+      <th mat-header-cell *matHeaderCellDef>Playliste</th>
+      <td mat-cell *matCellDef="let element">{{ element.playlist }}</td>
+    </ng-container>
+    <ng-container matColumnDef="ruecken">
+      <th mat-header-cell *matHeaderCellDef>ruecken</th>
+      <td mat-cell *matCellDef="let element">{{ element.ruecken }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nacken">
+      <th mat-header-cell *matHeaderCellDef>nacken</th>
+      <td mat-cell *matCellDef="let element">{{ element.nacken }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="handgelenke">
+      <th mat-header-cell *matHeaderCellDef>handgelenke</th>
+      <td mat-cell *matCellDef="let element">{{ element.handgelenke }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="knie">
+      <th mat-header-cell *matHeaderCellDef>knie</th>
+      <td mat-cell *matCellDef="let element">{{ element.knie }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="huefte">
+      <th mat-header-cell *matHeaderCellDef>huefte</th>
+      <td mat-cell *matCellDef="let element">{{ element.huefte }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="schulter">
+      <th mat-header-cell *matHeaderCellDef>schulter</th>
+      <td mat-cell *matCellDef="let element">{{ element.schulter }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fussgelenke">
+      <th mat-header-cell *matHeaderCellDef>fußgelenke</th>
+      <td mat-cell *matCellDef="let element">{{ element.fussgelenke }}</td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>Delete</th>
+      <td mat-cell *matCellDef="let element; index as i">
+        <button
+          type="button"
+          (click)="onDelete(i)"
+          class="btn btn-primary"
+          style="margin-left: 10px"
+        >
+          Löschen
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

@@ -1,0 +1,108 @@
+<!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+
+<section class="pricing py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Free Tier -->
+      <div class="col-lg-4">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center">
+              Basic
+            </h5>
+            <h6 class="card-price text-center">
+              €9,99 <span class="period">/Monat</span>
+            </h6>
+            <hr />
+            <ul class="fa-ul">
+              <li class="w3-padding-16"><b>2 Video</b> Pro Woche</li>
+              <li class="w3-padding-16"><b>max 24 Videos </b></li>
+              <li class="w3-padding-16"><b>Betreuung per E-Mail</b></li>
+              <li class="w3-padding-16"><b>Betreuung per WhatsApp</b></li>
+              <li class="w3-padding-16"><b>/</b></li>
+              <li class="w3-padding-16"><b>/</b></li>
+              <li class="w3-padding-16"><b>/</b></li>
+            </ul>
+            <a
+              (click)="openDialogWithTemplateRef(AGBDialog, 9.99, '')"
+              class="btn btn-block btn-primary text-uppercase"
+              >Mit PayPal abbonieren
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Plus Tier -->
+      <div class="col-lg-4">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center">
+              Plus
+            </h5>
+            <h6 class="card-price text-center">
+              €24,99<span class="period">/Monat</span>
+            </h6>
+            <hr />
+            <ul class="fa-ul">
+              <li class="w3-padding-16"><b>4 Videos</b> Pro Woche</li>
+              <li class="w3-padding-16"><b>max 45 Videos im Monat</b></li>
+              <li class="w3-padding-16"><b>Betreuung per E-Mail</b></li>
+              <li class="w3-padding-16"><b>Betreuung per WhatsApp</b></li>
+              <li class="w3-padding-16"><b>/</b></li>
+              <li class="w3-padding-16"><b>Jederzeit </b>kündigen</li>
+              <li class="w3-padding-16"><b>/</b></li>
+            </ul>
+            <a
+              (click)="openDialogWithTemplateRef(AGBDialog, 24.99, '')"
+              class="btn btn-block btn-primary text-uppercase"
+              >Mit PayPal abbonieren
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Pro Tier -->
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center">
+              Pro
+            </h5>
+            <h6 class="card-price text-center">
+              €43,99<span class="period">/Monat</span>
+            </h6>
+            <hr />
+            <ul class="fa-ul">
+              <li class="w3-padding-16"><b>6 Videos</b> Pro Woche</li>
+              <li class="w3-padding-16"><b>max 72 Videos im Monat</b></li>
+              <li class="w3-padding-16"><b>Betreuung per E-Mail</b></li>
+              <li class="w3-padding-16"><b>Betreuung per WhatsApp</b></li>
+              <li class="w3-padding-16"><b>Betreuung per Telefon</b></li>
+              <li class="w3-padding-16"><b>Jederzeit </b> kündigen</li>
+              <li class="w3-padding-16">
+                <b>Direkt Kontakt </b> mit Physiotherapeuten
+              </li>
+            </ul>
+            <a
+              (click)="openDialogWithTemplateRef(AGBDialog, 43.99, '')"
+              class="btn btn-block text-uppercase"
+              >Mit PayPal abbonieren
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #AGBDialog>
+  <h2 matDialogTitle>Unsere AGBs!</h2>
+  <p>Bitte lesen Sie den kompletten Text durch!</p>
+  <mat-dialog-content>
+    <app-agbs></app-agbs>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button matDialogClose (click)="paypalAction()" color="primary">
+      Annehmen
+    </button>
+    <button mat-button matDialogClose color="primary">Ablehnen</button>
+  </mat-dialog-actions>
+</ng-template>

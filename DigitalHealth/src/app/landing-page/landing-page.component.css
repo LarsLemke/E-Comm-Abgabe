@@ -1,0 +1,30 @@
+.container {
+  color: white;
+}
+
+.mySlides {
+  display: none;
+  height: 40rem;
+  overflow: hidden;
+}
+.w3-left,
+.w3-right,
+.w3-badge {
+  cursor: pointer;
+}
+.w3-badge {
+  height: 13px;
+  width: 13px;
+  padding: 0;
+}
+
+.breackText {
+  word-wrap: normal;
+}
+
+*.lespoints {
+  margin-bottom: 1em;
+}
+* .padding-top-32 {
+  margin-top: 4em;
+}

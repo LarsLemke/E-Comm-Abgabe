@@ -1,0 +1,209 @@
+<div class="w3-top">
+  <div class="w3-bar w3-theme-d2 w3-left-align">
+    <a
+      class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
+      href="javascript:void(0);"
+      (click)="openNav()"
+      ><i class="fa fa-bars"></i
+    ></a>
+
+    <!--a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a-->
+
+    <div class="w3-bar-item w3-hide-small w3-left w3-half" style="width: 100%">
+      <a href="#" class="w3-bar-item w3-button w3-teal w3-hover-white"
+        ><img
+          src="././assets/bilder/logo.png"
+          class="w3-circle"
+          style="width: 50%; max-width: 20px"
+          alt="Logo"
+        />
+        Physiomo</a
+      >
+      <a
+        href="#work"
+        class="w3-bar-item w3-button w3-hide-small w3-hover-white"
+        *ngIf="notLogedIn"
+        >Leistungen</a
+      >
+      <a
+        href="#pricing"
+        *ngIf="notLogedIn"
+        class="w3-bar-item w3-button w3-hide-small w3-hover-white"
+        >Abo</a
+      >
+      <a
+        href="#contact"
+        *ngIf="notLogedIn"
+        class="w3-bar-item w3-button w3-hide-small w3-hover-white"
+        >Kontakt</a
+      >
+
+      <div *ngIf="notLogedIn" style="float: right; padding-right: 10px">
+        <form [formGroup]="loginFormGroup" class="form-inline my-2 my-lg-0">
+          <div class="input-group">
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-user"></i
+            ></span>
+            <input
+              id="email"
+              type="email"
+              formControlName="nameCtrl"
+              name="email"
+              placeholder="Email Address"
+            />
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-lock"></i
+            ></span>
+            <input
+              id="password"
+              type="password"
+              formControlName="passwordCtrl"
+              name="password"
+              value=""
+              placeholder="Password"
+            />
+          </div>
+
+          <button
+            type="button"
+            (click)="onSubmit()"
+            class="btn btn-secondary"
+            style="margin-left: 10px"
+          >
+            Login
+          </button>
+          <button
+            style="margin-left: 5px"
+            type="button"
+            class="btn btn-info"
+            (click)="onRegister()"
+          >
+            Register
+          </button>
+        </form>
+        <div class="loginWrong" *ngIf="loginWrong">
+          Password oder E-Mail ungültig
+        </div>
+      </div>
+      <div *ngIf="!notLogedIn" style="float: right; padding-right: 10px">
+        <button
+          style="margin-left: 5px"
+          type="button"
+          class="btn btn-info"
+          (click)="onLogout()"
+        >
+          Logout
+        </button>
+        <button
+          style="margin-left: 5px"
+          type="button"
+          class="btn btn-info"
+          (click)="settings()"
+        >
+          Settings
+        </button>
+        <button
+          style="margin-left: 5px"
+          type="button"
+          class="btn btn-info"
+          (click)="profile()"
+        >
+          Profil Seite
+        </button>
+      </div>
+    </div>
+    <!-- Navbar on small screens -->
+    <div
+      id="navDemo"
+      class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium"
+    >
+      <a href="#work" class="w3-bar-item w3-button">Leistungen</a>
+      <a href="#pricing" class="w3-bar-item w3-button">Abo</a>
+      <a href="#contact" class="w3-bar-item w3-button">Kontakt</a>
+      <!--LogIn Zeile-->
+      <div class="w3-bar-item w3-right w3-half w3-theme-d2">
+        <div *ngIf="notLogedIn" style="float: right; padding-right: 10px">
+          <form [formGroup]="loginFormGroup" class="form-inline my-2 my-lg-0">
+            <div class="input-group">
+              <span class="input-group-addon"
+                ><i class="glyphicon glyphicon-user"></i
+              ></span>
+              <input
+                id="email"
+                type="email"
+                formControlName="nameCtrl"
+                name="email"
+                placeholder="Email Address"
+              />
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon"
+                ><i class="glyphicon glyphicon-lock"></i
+              ></span>
+              <input
+                id="password"
+                type="password"
+                formControlName="passwordCtrl"
+                name="password"
+                value=""
+                placeholder="Password"
+              />
+            </div>
+
+            <button
+              type="button"
+              (click)="onSubmit()"
+              class="btn btn-secondary"
+              style="margin-left: 10px"
+            >
+              Login
+            </button>
+            <button
+              style="margin-left: 5px"
+              type="button"
+              class="btn btn-info"
+              (click)="onRegister()"
+            >
+              Register
+            </button>
+          </form>
+          <div class="loginWrong" *ngIf="loginWrong">
+            Password oder E-Mail ungültig
+          </div>
+        </div>
+        <div *ngIf="!notLogedIn" style="float: right; padding-right: 10px">
+          <button
+            style="margin-left: 5px"
+            type="button"
+            class="btn btn-info"
+            (click)="onLogout()"
+          >
+            Logout
+          </button>
+          <button
+            style="margin-left: 5px"
+            type="button"
+            class="btn btn-info"
+            (click)="settings()"
+          >
+            Settings
+          </button>
+          <button
+            style="margin-left: 5px"
+            type="button"
+            class="btn btn-info"
+            (click)="profile()"
+          >
+            Profil Seite
+          </button>
+        </div>
+      </div>
+      <div class="w3-third"></div>
+      <!--a href="#" class="w3-bar-item w3-button">Search</a-->
+    </div>
+  </div>
+</div>

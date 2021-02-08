@@ -1,0 +1,23 @@
+<mat-card class="video-card" *ngFor="let item of videos">
+  <mat-card-header>
+    <mat-card-title> {{ item.titel }}</mat-card-title>
+  </mat-card-header>
+  <iframe
+    *ngIf="item.url"
+    width="560"
+    height="315"
+    [src]="item.url"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+  <mat-card-content>
+    <p>
+      {{ item.beschreibung }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
